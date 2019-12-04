@@ -8,7 +8,7 @@ To create the database using H2 shell:
 		java -cp h2*.jar org.h2.tools.Server
 2. In a different window from the liquibase_pro\lib folder run:
 		java -cp h2*.jar org.h2.tools.Shell
-3. Enter the following values:
+3. Enter the following values (to create the h2example database):
 * URL: jdbc:h2:~/h2example
 * Driver: org.h2.Driver
 * User: admin
@@ -16,7 +16,7 @@ To create the database using H2 shell:
 4. If you change any of these values you will need to make corresponding changes to the h2_project\liquibase.properties file.
 
 Once the database is created you should be able to view it using the H2 Console:
-1. Run the h2-1.4.200.jar file in liquibase_pro\lib\
+1. In a browser go to http://localhost:8082
 2. This action should bring up the H2 Console Login Screen
 * Setting Name: Generic H2 (Server)
 * Driver Class: org.h2.Driver
