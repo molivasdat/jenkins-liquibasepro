@@ -3,12 +3,13 @@
 ### H2 Database Setup
 This example uses a TCP Server connection for the H2 Database.  The database needs to be created first.
 
-To create the database using H2 shell:
-1. Copy the h2_project\h2example.mv.db to your home directory.
-2. From the liquibase_pro\lib folder run:
+To create the database using H2 shell: 
+1. From the liquibase_pro\lib folder run:
+		java -cp h2*.jar org.h2.tools.Server
+2. In a different window from the liquibase_pro\lib folder run:
 		java -cp h2*.jar org.h2.tools.Shell
 3. Enter the following values:
-* URL: jdbc:h2:tcp://localhost/~/h2example
+* URL: jdbc:h2:~/h2example
 * Driver: org.h2.Driver
 * User: admin
 * Password: password
