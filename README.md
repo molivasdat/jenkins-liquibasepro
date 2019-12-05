@@ -30,8 +30,11 @@ Once the database is created you should be able to view it using the H2 Console:
 
 ### Jenkins Setup
 1. Create a Jenkins pipeline and reference the jenkinsfile-examples/updateDb.groovy in the Script Path.
-2. You may need to update the jenkinsfile-examples/updateDb.groovy script to use the appropriate node label for your Jenkins installation.  
-3. Depending on your environment you may need to update the bat statements to use sh.
+*  I called it LBJob
+2. You may need to update the jenkinsfile-examples/updateDb.groovy script to use the appropriate node label for your Jenkins installation. 
+3. Copy the h2_project and liquibase_pro directories into your job folder on Jenkins
+*  In my instance that was /Users/username/.jenkins/workspace/LBJob
+4. Depending on your environment you may need to update the bat statements to use sh.
 
 ### Results
 1. Run the Jenkins script using "Build Now"
