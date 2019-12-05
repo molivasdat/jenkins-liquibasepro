@@ -13,23 +13,30 @@ pipeline {
   stages {
     stage ('Check Environment') {
       steps {      
-		bat ''' 
+		oscommand  (''' 
 		  java -version
 		  cd liquibase_pro
 		  ./liquibase --version
-		'''
+		''')
       } // steps
     } // stage 'Check Environment'
 	  
     stage('Update H2 Database') {
       steps {
-		bat '''
+		oscommand ('''
 		  cd h2_project
-		  ../liquibase_pro/liquibase.bat update
-		'''
+		  ../liquibase_pro/liquibase update
+		''')
 		echo 'H2 database changes can be viewed at http://localhost:8082/'
       } // steps
     } // stage 'Update H2 Database'
 	  
   } // stages
 } // pipeline
+def oscommand(command) {
+  if (isUnix()) {
+    sh command
+  } else {
+    bat command
+  }
+}
